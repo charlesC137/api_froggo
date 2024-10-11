@@ -11,11 +11,7 @@ router.get("/search", async (req, res) => {
 
     req.session.search = { query, results };
 
-    if (results.length === 0) {
-      res.sendStatus(204);
-    } else {
-      res.sendStatus(201);
-    }
+    res.sendStatus(201);
   } catch (error) {
     console.error(error);
     res.status(500).json("Error searching for keyword");
